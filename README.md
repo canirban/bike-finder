@@ -12,23 +12,23 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+In terms of Framework i've choosen NextJs
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+The app has following funtionalities:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Displays the list of Dublin Bike stations in alphabetical order.
 
-## Learn More
+2. For each station, it shows the station address, number of bikes available, number of empty bike stands available, links station location to map.
 
-To learn more about Next.js, take a look at the following resources:
+3. Stations can be filtered by typing in station name/address/available bikes/number of empty bike stands
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Favourite button for each station, on selecting it shows that station before all stations.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To add this feature it took me around 3hrs.
 
-## Deploy on Vercel
+If I had more time I would have added a bit more CSS, refactored the code a bit more and added these 2 features.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Recommend the closest station based on location - would have achieved that, firstly determining my coords, lat, long. Then create a function/hook to determine shortest distance between 2 latitude and longitude. Use that hook to find the distance between my location and all the station location. Store it in an array(call it distance array) exactly same as the stationList. Find the minimum distance using Math.min on the distance array. Find the indexOf that minimum value in distance array, access the station from the staion array on that index. It would be the closest station from my location.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Recommend the closest station based on location - this can be achieved by using the react-google-map lib and rendering GoogleMap  mapping with multiple mark postion (lat,longitude) available from the stationList. 
+
