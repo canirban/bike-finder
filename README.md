@@ -32,3 +32,6 @@ If I had more time I would have added a bit more CSS, refactored the code a bit 
 
 2. Recommend the closest station based on location - this can be achieved by using the react-google-map lib and rendering GoogleMap  mapping with multiple mark postion (lat,longitude) available from the stationList. 
 
+App demo [https://www.loom.com/share/7d438405e9654e879cb5352baead79b3](https://www.loom.com/share/7d438405e9654e879cb5352baead79b3)
+
+App hosted here https://bike-finder-tan.vercel.app/
