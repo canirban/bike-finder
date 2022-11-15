@@ -9,13 +9,18 @@ export default function Home({ stations }) {
     </Page>
   );
 }
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const response = await fetch(url);
     const stations = await response.json();
-    stations.sort((a,b)=> (a.name.toLowerCase() > b.name.toLowerCase()) ? 1 : ((b.name.toLowerCase() > a.name.toLowerCase()) ? -1 : 0))
-    return { props: { stations 
-    } };
+    stations.sort((a, b) =>
+      a.name.toLowerCase() > b.name.toLowerCase()
+        ? 1
+        : b.name.toLowerCase() > a.name.toLowerCase()
+        ? -1
+        : 0
+    );
+    return { props: { stations } };
   } catch (e) {}
   return { props: { stations: [] } };
 }
